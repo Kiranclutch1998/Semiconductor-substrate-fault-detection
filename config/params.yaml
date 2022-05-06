@@ -1,10 +1,10 @@
 base:
-  project: Wafer-Quality-Project
+  project: Semiconductor-substrate-Project
   random_state: 42
   target_col: Output
 
 data_source:
-  batch_files: Training_Batch_Files
+  batch_files: Training_Batch_Files/
 
 
 data_preparation:
@@ -15,7 +15,7 @@ data_preparation:
   bad_validated_raw_dir: data/Training_Raw_files_validated/Bad_raw
   TrainingArchiveBadData: data/TrainingArchiveBadData
   Training_FileFromDB: data/Training_FileFromDB
-  master_csv: master.csv
+  master_csv: InputFile.csv
 
 pred_data_preparation:
   prediction_db: Prediction.db
@@ -33,7 +33,7 @@ saved_models:
   model_dir: models
 
 data_preprocessing:
-  preprocessed_data_dir: data/preprocessed_data
+  preprocessed_data_dir: data/preprocessing_data
   null_values_csv: null_values.csv
 
   preprocessed_data_dir_pred: data/preprocessed_data_pred

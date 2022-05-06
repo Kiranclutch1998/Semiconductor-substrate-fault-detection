@@ -1,0 +1,17 @@
+2022-05-04/20:18:51		BadRaw directory deleted before starting validation!!!
+2022-05-04/20:18:51		GoodRaw directory deleted successfully!!!
+2022-05-04/20:32:52		BadRaw directory deleted before starting validation!!!
+2022-05-04/20:32:53		GoodRaw directory deleted successfully!!!
+2022-05-04/20:43:58		BadRaw directory deleted before starting validation!!!
+2022-05-04/20:43:58		GoodRaw directory deleted successfully!!!
+2022-05-04/20:53:08		BadRaw directory deleted before starting validation!!!
+2022-05-04/20:53:08		GoodRaw directory deleted successfully!!!
+2022-05-04/20:58:25		GoodRaw directory deleted successfully!!!
+2022-05-04/20:58:29		Error while moving bad files to archive:: [Errno 2] No such file or directory: 'data/Training_Raw_files_validated/Bad_raw.gitignore'
+2022-05-05/12:21:32		BadRaw directory deleted before starting validation!!!
+2022-05-05/12:25:07		GoodRaw directory deleted successfully!!!
+2022-05-05/12:25:12		Bad files moved to archive
+2022-05-05/12:25:12		Bad Raw Data Folder Deleted successfully!!
+2022-05-05/12:40:08		GoodRaw directory deleted successfully!!!
+2022-05-05/12:40:09		Bad files moved to archive
+2022-05-05/12:40:09		Bad Raw Data Folder Deleted successfully!!
