@@ -6,3 +6,6 @@ stages:
       - Training_Batch_Files
     outs:
       - data/Training_FileFromDB/InputFile.csv
+
+  training_stage:
+    cmd: python src/training.py
