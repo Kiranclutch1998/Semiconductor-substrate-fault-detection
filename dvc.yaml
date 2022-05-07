@@ -1,0 +1,8 @@
+stages:
+  data_validation:
+    cmd: python src/validation.py --config==params.yaml
+    deps:
+      - src/validation.py
+      - Training_Batch_Files
+    outs:
+      - data/Training_FileFromDB/InputFile.csv

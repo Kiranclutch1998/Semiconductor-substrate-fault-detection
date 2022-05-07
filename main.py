@@ -4,7 +4,7 @@ from wsgiref import simple_server
 from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
 from flask import Response
-#import flask_monitoringdashboard as dashboard
+import flask_monitoringdashboard as dashboard
 from training_Validation_insertion import train_validation
 from prediction_Validation_Insertion import pred_validation
 from trainingModel import trainModel
@@ -14,7 +14,7 @@ os.putenv('LANG', 'en_US.UTF-8')
 os.putenv('LC_ALL', 'en_US.UTF-8')
 
 app = Flask(__name__)
-#dashboard.bind(app)
+dashboard.bind(app)
 CORS(app)
 
 
@@ -66,8 +66,8 @@ def trainRouteClient():
         if request.json['folderPath'] is not None:
             path = request.json['folderPath']
 
-            #train_valObj = train_validation(path)  # object initialization
-            #train_valObj.train_validation()  # calling the training_validation function
+            train_valObj = train_validation(path)  # object initialization
+            train_valObj.train_validation()  # calling the training_validation function
 
             trainModelObj = trainModel()  # object initialization
             trainModelObj.trainingModel()  # training the model for the files in the table
