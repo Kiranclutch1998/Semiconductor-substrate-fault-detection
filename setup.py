@@ -1,10 +1,10 @@
-from setuptools import find_packages, setup
+from setuptools import setup, find_packages
 
 setup(
-    name='src',
+    name="docker-heroku",
+    version="0.0.3",
+    description="ML project",
+    author="Kiran Poojari", 
     packages=find_packages(),
-    version='0.1.0',
-    description='A short description of the project.',
-    author='Kiranclutch1998',
-    license='MIT',
+    license="MIT"
 )
