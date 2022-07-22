@@ -1,57 +1,44 @@
-semiconductor_substrate_fault
-==============================
-
-A short description of the project.
-
-Project Organization
-------------
-
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
+# WaferFaultDetection
+The inputs of various sensors for different wafers have been provided. In electronics, a wafer (also called a slice or substrate) is a thin slice of semiconductor used for the fabrication of integrated circuits. The goal is to build a machine learning model which predicts whether a wafer needs to be replaced or not(i.e., whether it is working or not) based on the inputs from various sensors.
 
 
---------
+There are two classes: +1 and -1.
 
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+    -1 means that the wafer is in a working condition and it doesn’t need to be replaced.
+    +1 means that the wafer is faulty and it needs to be replaced.
+
+![semiconductor-wafer-inspection](https://user-images.githubusercontent.com/76097123/159292194-78f9bc96-2be7-4e76-8aa0-028daa8b70e6.jpg) ![Intel_wafer](https://user-images.githubusercontent.com/76097123/159290987-e34f0992-f0ca-46de-81d4-aade006ee673.gif)
+
+## Data Description
+The electronic wafer dataset consist of 592 columns
+
+    1.First column contains wafer id
+    2.590 column contains the sensor data
+    3.Last column contains the target value labels e.g +1 for defective and -1 for not defective.
+
+Apart from training files, we also require a "schema" file from the client, which contains all the relevant information about the training files such as: Name of the files, Length of Date value in FileName, Length of Time value in FileName, Number of Columns, Name of the Columns, and their datatype.
+
+## Architecture
+
+![img1](https://user-images.githubusercontent.com/76097123/159437449-e1b70734-59ae-452c-968f-18850d04e073.jpg)
+
+**Tech used:)**
+
+- Python
+- scikit-learn
+- sqlite
+- pandas
+- numpy
+- logger
+- kneed ( python library for getting best k value)
+
+**Algorithms used**
+
+- KMeans( for clustering)
+- Random Forest Classifier
+- XGBoost Classifier
+
+**Accuracy Metric** 
+
+- Silhouette score(clustering)
+- AUC Score
